@@ -2,7 +2,7 @@
 using namespace std;
 
 typedef vector< pair<int,int> > vectorPair;
-int pNo=179; // a random prime number
+int pNo=381; //random number
 
 class SSSS {
     private:

@@ -18,12 +18,12 @@ class SSSS {
 
     vectorPair encrypt() {
         int num=int(secretString);     //ASCII val of secretString
-        int a0=num;
-        int a1=rand()%pNo;
+        int a=num;
+        int b=1;
         vectorPair keysArr;
         for(int i=1;i<=4;i++)
         {
-            keysArr.push_back({i,(a0+a1*i)%pNo});  //store 4 keys
+            keysArr.push_back({i,(a+b*i)%pNo});  //store 4 keys
         }
         int x=rand()%4,y=rand()%4; // to find keys 
         while(x==y)
@@ -43,7 +43,7 @@ class SSSS {
         int x1=keys[1].first;
         int y1=keys[1].second;
 
-        // Lagrange basis polynomial (https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)
+        // Lagrange basis polynomial (https://e...content-available-to-author-only...a.org/wiki/Shamir%27s_Secret_Sharing)
         int ans= (y0*x1/(x0-x1)) + (y1*x0/(x1-x0));
 
         ans=-1*ans;
@@ -79,4 +79,3 @@ int main()
     }
     return 0;
 }
-
